@@ -8,53 +8,54 @@
 
 body {}
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    color: white;
-}
-
 .brand-title {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     margin: 0.5rem;
 }
 
-.navbar-links ul {
+.navbar {
     display: flex;
+    background-color: #333;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
 }
 
-.navbar-links ul li a {
-    color: white;
-    padding: 1rem;
-    display: block;
+.navbar .navbar-links ul {
+    display: flex;
 }
 
 .navbar-links li:hover {
     background-color: #555;
 }
 
-.toggle-button {
-    position: absolute;
-    top: 0.75rem;
-    right: 1rem;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
+.navbar .navbar-links ul li a {
+    color: white;
+    padding: 1rem;
+    display: block;
 }
 
-.toggle-button .bar {
-    height: 3px;
+.menu-toggle {
+    display: none;
+    position: absolute;
+    width: 30px;
+    height: 21px;
+    right: 1rem;
+    top: .75rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-toggle .bar {
     width: 100%;
+    height: 3px;
     background-color: white;
     border-radius: 10px;
 }
 
+
 @media screen and (max-width: 576px) {
-    .toggle-button {
+    .menu-toggle {
         display: flex;
     }
 
