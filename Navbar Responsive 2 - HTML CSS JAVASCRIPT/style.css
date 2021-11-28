@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: blanchedalmond;
+    height: 50px;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    width: 40%;
+    justify-content: space-evenly;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+nav ul li a:hover {
+    color: green;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle span {
+    display: block;
+    background-color: white;
+    height: 3px;
+    width: 28px;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -3px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked~span:nth-child(2) {
+    background-color: black;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked~span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.menu-toggle input:checked~span:nth-child(4) {
+    background-color: black;
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+/* Responsive Breakpoint */
+
+/* tablet */
+@media screen and (max-width: 768px) {
+    nav ul {
+        width: 50%;
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 576px) {
+    nav ul {
+        /* display: none; */
+        position: absolute;
+        right: 0;
+        flex-direction: column;
+        background-color: blanchedalmond;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        align-items: center;
+        z-index: -1;
+        justify-content: space-evenly;
+        transform: translateX(100%);
+        transition: all 1s;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav ul.slide {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
