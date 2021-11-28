@@ -94,6 +94,7 @@ a:hover {
         text-align: center;
         transition: all 0.5s;
         /* z-index: -1; */
+        /* aktifkan z-index agar animasi datang dari belakang tapi harus disetting lagi untyuk gambarnya*/
     }
 
     nav ul li {
